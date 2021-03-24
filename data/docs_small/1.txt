@@ -1,0 +1,16 @@
+SCALING THE SYSTEM
+Over the last decade, search engines have gone from crawling tens of millions of documents to over a
+trillion documents [Alpert, 2008]. Building an index of this scale can be a daunting task. On top of that
+serving hundreds of queries per second against such an index only makes the task harder. In mid 2004,
+the Google search engine processed more than 200 million queries a day against more than 20TB of
+crawled data, using more than 20,000 computers [Computer School, 2010].
+Web search engines use distributed indexing algorithms for index construction because the data
+collections are too large to efficiently processed on a single machine. The result of the construction
+process is a distributed index that is partitioned across several machines. As discussed in the previous
+section this distributed index can be partitioned according to term or according to document.
+While having the right infrastructure is not necessary (and search engines before 2004 did not have many
+of these pieces), they definitely can reduce the pain involved in building such a system. As the
+dependence on parallel processing increased, the need for an efficient parallel programming paradigm
+arose: a framework that provided the highest computational efficiency while maximizing programming
+efficiency [Asanovic, 2008]. In this section, we will summarize the features of a distributed file system
+and a map-shuffle-reduce system used within a web-indexer.
